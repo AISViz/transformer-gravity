@@ -19,7 +19,7 @@
 ## 1. Overview
 
 Maritime shipping traffic is a critical component of global trade, with significant implications for economic activities and environmental management. 
-This project develops a novel physics-informed model named ***TransformerGravity***, to forecast worldwide maritime shipping traffic between port regions. Inspired by the gravity model for mobility studies, our approach incorporates various factors that influence the likelihood and impact of vessel activities, such as shipping flux density, distance between ports, international trade flow, and centrality measures of transportation hubs.
+This project develops a novel physics-informed model named ***Transformer Gravity***, to forecast worldwide maritime shipping traffic between port regions. Inspired by the gravity model for mobility studies, our approach incorporates various factors that influence the likelihood and impact of vessel activities, such as shipping flux density, distance between ports, international trade flow, and centrality measures of transportation hubs.
 
 Our model introduces transformers to the gravity model framework, enhancing the ability to capture both short- and long-term dependencies in maritime traffic data. This innovation enables us to achieve an 85.8% accuracy for forecasting the number of vessels flowing between key port areas, representing more than a 10% improvement over the *DeepGravity* model ([Simini et al., 2021](#R1)) with MLPs structure and 50% improvement over traditional machine learning models.
 
@@ -52,7 +52,7 @@ As disconnected and weakly connected components were detected, we fully connecte
 
 These predicted links were then used to inform potential origin-destination (OD) pairs for gravity-informed models to forecast vessel traffic flows.
 
-***TransformerGravity*** model is designed for vessel traffic flow prediction, incorporating stacked transformers and features from the gravity model (i.e., shipping fluxes at ports and distances between sources and destinations in the shipping network), international bilateral trade volume, and graph metrics of the shipping network. 
+***Transformer Gravity*** model is designed for vessel traffic flow prediction, incorporating stacked transformers and features from the gravity model (i.e., shipping fluxes at ports and distances between sources and destinations in the shipping network), international bilateral trade volume, and graph metrics of the shipping network. 
 As illustrated in *Figure 1*, the process begins with input sequences that are embedded and passed through self-attention blocks with multi-head attention, dropout, and layer normalization. This is followed by feed-forward blocks containing linear layers and dropout, resulting in the output sequence. The model is trained using cross-entropy loss with log-softmax, and its performance is evaluated using the *Common Part of Commuters (CPC)* metric, which incorporates commuting patterns from the input data.
 
 ![2-layered TransformerGravity](images/TG_2Layers.png)
