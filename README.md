@@ -109,11 +109,11 @@ The following PyTorch models in folder `models` have been trained on 2017-2018 g
 ## 4. Source Data
 
 <a id='D1'></a>
-- National Geospatial-Intelligence Agency (NGA). World Port Index (Pub 150). https://msi.nga.mil/Publications/WPI (2019).
+- National Geospatial-Intelligence Agency (NGA). World Port Index (Pub 150). https://msi.nga.mil/Publications/WPI (2019);
 <a id='D2'></a>
-- The Growth Lab at Harvard University. International trade data (SITC, rev. 2), DOI: 11.7910/DVN/H8SFD2 (2019).
-- 2017-2019 ship movement data: sourced from ([Carlini et al., 2022](#R2)).
-- Environmental conditions at ports: sourced from ([Bailey et al., 2020](#R4))
+- The Growth Lab at Harvard University. International trade data (SITC, rev. 2), DOI: 11.7910/DVN/H8SFD2 (2019);
+- 2017-2019 ship movement data: sourced from ([Carlini et al., 2022](#R2)); and,
+- Environmental conditions at ports: sourced from ([Bailey et al., 2020](#R4)).
 
 <a id='cite'></a>
 ## 5. Citation
