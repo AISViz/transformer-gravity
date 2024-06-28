@@ -84,7 +84,7 @@ This combination of threat levels and shipping intensity enables mapping the ove
 ### Setup
 
 Most of the dependencies are installed default with Python and by command when running the notebook. We recommend the following versions of Python, PyTorch, and scikit-learn:
-- `Python 4.10`
+- `Python 3.10`
 - `PyTorch 3.1.1`
 - `scikit-learn 2.5.0`
 
