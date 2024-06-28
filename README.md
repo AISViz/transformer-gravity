@@ -10,10 +10,10 @@
     - [Setup](#setup)
     - [Functional script](#script)
     - [Trained models](#model)
-3. [Source Data](#3)
-4. [Citation](#4)
+3. [Source Data](#data)
+4. [Citation](#cite)
 
-[References](#5)
+[References](#reference)
 
 <a id='overview'></a>
 ## 0. Overview
@@ -114,7 +114,7 @@ The following PyTorch models in folder `models` have been trained on 2017-2018 g
 
 `Model_15TraditionalDeepGravity.pth`: *DeepGravity* model with 15 feed-forward layers (original *DeepGravity*)
 
-<a id='model'></a>
+<a id='data'></a>
 ## 3. Source Data
 
 <a id='D1'></a>
@@ -124,10 +124,10 @@ The following PyTorch models in folder `models` have been trained on 2017-2018 g
 - 2017-2019 ship movement data: sourced from ([Carlini et al., 2022](#R2)).
 - Environmental conditions at ports: sourced from ([Bailey et al., 2020](#R4))
 
-
+<a id='cite'></a>
 ## 4. Citation
 
-Please using the citation as follows if our work helps you any:
+If you find our work helpful in your study, we kindly ask you to cite it as follows:
 
 ```
 @misc{TransformerGravityVesselFlowPrediction2024,
@@ -141,6 +141,7 @@ Please using the citation as follows if our work helps you any:
 }
 ```
 
+<a id='reference'></a>
 ## References
 
 <a id='R1'></a>
