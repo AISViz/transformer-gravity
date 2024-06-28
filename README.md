@@ -1,4 +1,4 @@
-# TransformerGravity: a gravity-inspired deep learning framework for maritime traffic prediction in the global shipping network
+# *(Transformer Gravity)* Enhancing Global Maritime Traffic Network Forecasting with Gravity-Inspired Deep Learning Models
 
 ## Table of Contents
 1. [Overview](#overview)
