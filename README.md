@@ -1,4 +1,4 @@
-# Transformer Gravity | Enhancing Global Maritime Traffic Network Forecasting with Gravity-Inspired Deep Learning Models
+# Transformer Gravity | *Enhancing Global Maritime Traffic Network Forecasting with Gravity-Inspired Deep Learning Models*
 
 ## Table of Contents
 1. [Overview](#overview)
