@@ -19,16 +19,16 @@
 ## 1. Overview
 
 Maritime shipping traffic is a critical component of global trade, with significant implications for economic activities and environmental management. 
-This project develops a novel physics-informed model, named ***TransformerGravity***, to forecast maritime shipping traffic between port regions worldwide. Inspired by the gravity model for mobility studies, our approach incorporates various factors that influence the likelihood and impact of vessel activities, such as shipping flux density, distance between ports, international trade flow, and centrality measures of transportation hubs.
+This project develops a novel physics-informed model named ***TransformerGravity***, to forecast worldwide maritime shipping traffic between port regions. Inspired by the gravity model for mobility studies, our approach incorporates various factors that influence the likelihood and impact of vessel activities, such as shipping flux density, distance between ports, international trade flow, and centrality measures of transportation hubs.
 
-Our model introduces transformers to the gravity model framework, enhancing the ability to capture both short- and long-term dependencies in maritime traffic data. This innovation enables us to achieve an 85.8% accuracy for forecasting the number of vessels flowing between key port areas, representing more than a 10% improvement over the *DeepGravity* model ([Simini et al., 2021](#R1)) with MLPs sturcture and 50% improvement over traditional machine learning models.
+Our model introduces transformers to the gravity model framework, enhancing the ability to capture both short- and long-term dependencies in maritime traffic data. This innovation enables us to achieve an 85.8% accuracy for forecasting the number of vessels flowing between key port areas, representing more than a 10% improvement over the *DeepGravity* model ([Simini et al., 2021](#R1)) with MLPs structure and 50% improvement over traditional machine learning models.
 
 In addition to its primary focus on shipping traffic flow prediction, the model's predicted information is also used as input for risk assessments related to the spread of non-indigenous species (NIS) through transportation networks. This application provides valuable insights for evaluating the capability of our solution in mitigating potential environmental impacts.
 
 <a id='analytical-pipeline'></a>
 ## 2. Analytical Pipeline
 
-The whole analytical pipeline include three primary sections: (1) shipping network analysis, (2) vessel traffic flow prediction, and (3) a case study with ballast water risk assessment (BWRA), as illustrated in *Figure 2*.
+The whole analytical pipeline includes three primary sections: (1) shipping network analysis, (2) vessel traffic flow prediction, and (3) a case study with ballast water risk assessment (BWRA), as illustrated in *Figure 2*.
 
 
 ![Graph Analysis Pipeline](images/link_pred_pipeline.png)
@@ -56,6 +56,7 @@ These predicted links were then used to inform potential origin-destination (OD)
 As illustrated in *Figure 1*, the process begins with input sequences that are embedded and passed through self-attention blocks with multi-head attention, dropout, and layer normalization. This is followed by feed-forward blocks containing linear layers and dropout, resulting in the output sequence. The model is trained using cross-entropy loss with log-softmax, and its performance is evaluated using the *Common Part of Commuters (CPC)* metric, which incorporates commuting patterns from the input data.
 
 ![2-layered TransformerGravity](images/TG_2Layers.png)
+
 *Figure 4. Framework of the TransformerGravity model with two transformer encoder layers.*
 
 Detailed explanations of the model structure, including layer-by-layer descriptions, evaluation metrics, and training configurations, can be found in the `Methods` section of our paper, *"Enhancing Global Maritime Traffic Network Forecasting with Gravity-Inspired Deep Learning Models"* [[arXiv](https://arxiv.org/abs/2402.13098)].
@@ -71,7 +72,7 @@ For comparison, we also performed the vessel flow prediction using *DeepGravity*
 
 As part of the study, we assessed the risk of Non-Indiginous Species (NIS) introduction associated with shipping flows using the BWRA decision tool employed by Transport Canada ([Bradie and Bailey, 2021](#R3)).
 This risk model produces an environmental distance value that compares the dissimilarities between a ship's origin and destination. When a ship arrives at a destination and comes from an origin with similar environmental characteristics (*i.e.,* higher risk) as the destination port, it is more likely to be inspected by the responsible authorities. These environmental distance values inform the threat levels associated with various shipping pathways. Then, we integrated the environmental distance values with the shipping intensity by weighting environmental distance according to the number of trips on specific shipping routes. 
-This combination of both threat levels and shipping intensity enables the mapping of the overall distribution of shipping activities across the global network at varying invasion risk levels, as shown in *Figure 4*.
+This combination of threat levels and shipping intensity enables mapping the overall distribution of shipping activities across the global network at varying invasion risk levels, as shown in *Figure 4*.
 
 ![environmental-distance](images/environmental_distance.png)
 *Figure 5. Distribution of environmental distances weighted by shipping flows in 2019.*
@@ -82,13 +83,10 @@ This combination of both threat levels and shipping intensity enables the mappin
 <a id='setup'></a>
 ### Setup
 
-Most of the dependencies are installed defautly with Python and by command when running the notebook. We recommand the following versions of Python, PyTorch, and scikit-learn:
-
-`Python 4.10`
-
-`PyTorch 3.1.1`
-
-`scikit-learn 2.5.0`
+Most of the dependencies are installed default with Python and by command when running the notebook. We recommend the following versions of Python, PyTorch, and scikit-learn:
+- `Python 4.10`
+- `PyTorch 3.1.1`
+- `scikit-learn 2.5.0`
 
 <a id='script'></a>
 ### Functional script
@@ -99,20 +97,13 @@ Most of the dependencies are installed defautly with Python and by command when 
 ### Trained models
 
 The following PyTorch models in folder `models` have been trained on 2017-2018 global shipping data and can be directly imported for 2019 vessel traffic flow prediction:
-
-`Model_OneTransformerDeepGravity.pth`: *TransformerGravity* model with 1 transformer encoder layer
-
-`Model_3TransformerDeepGravity.pth`: *TransformerGravity* model with 3 transformer encoder layers
-
-`Model_5TransformerDeepGravity.pth`: *TransformerGravity* model with 5 transformer encoder layers
-
-`Model_3TraditionalDeepGravity.pth`: *DeepGravity* model with 3 feed-forward layers
-
-`Model_9TraditionalDeepGravity.pth`: *DeepGravity* model with 9 feed-forward layers
-
-`Model_12TraditionalDeepGravity.pth`: *DeepGravity* model with 12 feed-forward layers
-
-`Model_15TraditionalDeepGravity.pth`: *DeepGravity* model with 15 feed-forward layers (original *DeepGravity*)
+- `Model_OneTransformerDeepGravity.pth`: *TransformerGravity* model with 1 transformer encoder layer
+- `Model_3TransformerDeepGravity.pth`: *TransformerGravity* model with 3 transformer encoder layers
+- `Model_5TransformerDeepGravity.pth`: *TransformerGravity* model with 5 transformer encoder layers
+- `Model_3TraditionalDeepGravity.pth`: *DeepGravity* model with 3 feed-forward layers
+- `Model_9TraditionalDeepGravity.pth`: *DeepGravity* model with 9 feed-forward layers
+- `Model_12TraditionalDeepGravity.pth`: *DeepGravity* model with 12 feed-forward layers
+- `Model_15TraditionalDeepGravity.pth`: *DeepGravity* model with 15 feed-forward layers (original *DeepGravity*)
 
 <a id='data'></a>
 ## 4. Source Data
@@ -151,7 +142,7 @@ If you find our work helpful in your study, we kindly ask you to cite it as foll
 [2] Carlini, E. et al. Understanding evolution of maritime networks from automatic identification system data. GeoInformatica 26, 479–503 (2022). https://doi.org/11.1007/s10707-021-00451-1.
 
 <a id='R3'></a>
-[3] Bradie, JN, Bailey, SA. A decision support tool to prioritize ballast water compliance monitoring by ranking risk of non-indigenous species establishment. *J Appl Ecol.* 2021; 58: 587– 595. https://doi.org/11.1111/1365-2665.13822
+[3] Bradie, JN, Bailey, SA. A decision support tool to prioritize ballast water compliance monitoring by ranking the risk of non-indigenous species establishment. *J Appl Ecol.* 2021; 58: 587– 595. https://doi.org/11.1111/1365-2665.13822
 
 <a id='R4'></a>
 [4] Bailey, Sarah; Bradie, Johanna; Ogilvie, Dawson; Mudroch, Paul., Global port environmental data used for environmental distance calculations, *Dryad*, Dataset (2020) https://doi.org/11.5061/dryad.69p8cz906
