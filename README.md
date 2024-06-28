@@ -121,14 +121,18 @@ The following PyTorch models in folder `models` have been trained on 2017-2018 g
 If you find our work helpful in your study, we kindly ask you to cite it as follows:
 
 ```
-@misc{TransformerGravityVesselFlowPrediction2024,
-      title={Gravity-Informed Deep Learning Framework for Predicting Ship Traffic Flow and Invasion Risk of Non-Indigenous Species via Ballast Water Discharge}, 
-      author={Ruixin Song and Gabriel Spadon and Ronald Pelot and Stan Matwin and Amilcar Soares},
-      year={2024},
-      eprint={2402.13098},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2402.13098}, 
+@Article{song2024gravity,
+  author     = {Ruixin Song and Gabriel Spadon and Ronald Pelot and S. Matwin and Amílcar Soares},
+  journal    = {arXiv preprint arXiv:2401.13098},
+  title      = {Enhancing Global Maritime Traffic Network Forecasting with Gravity-Inspired Deep Learning Models},
+  year       = {2024},
+  copyright  = {arXiv.org perpetual, non-exclusive license},
+  doi        = {10.48550/arXiv.2401.13098},
+  eprint     = {2401.13098},
+  eprinttype = {arXiv},
+  keywords   = {Maritime Traffic Forecasting, Gravity Model, Deep Learning, Non-Indigenous Species, Risk Assessment},
+  publisher  = {arXiv},
+  venue      = {arXiv.org},
 }
 ```
 
